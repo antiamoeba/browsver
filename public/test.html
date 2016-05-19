@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title>Test</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="bundle.js"></script>
+	<script src="socket.js"></script>
+	<script src="src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<style>
+		body {
+			background-color: #003F4A;
+			padding: 5px;
+		}
+		#editor {
+			position: absolute;
+			top: 45px;
+			bottom: 100px;
+			left: 13px;
+			right: 13px;
+		}
+		#serverButton {
+			height: 25px;
+			background-color: red;
+			border: none;
+			padding: 0;
+			color: white;
+			font-size: 14px;
+		}
+		#link {
+			margin-left: 3px;
+			height: 25px;
+			background-color: #222222;
+			border: none;
+			padding: 0 5px 0;
+			color: white;
+			font-size: 14px;
+		}
+		#header {
+			position: relative;
+			height: 25px;
+			margin-bottom: 5px;
+			padding: 0px;
+			margin: 0px;
+		}
+		#console {
+			position: fixed;
+    		bottom: 0;
+			background-color: black;
+			color: white;
+			height: 100px;
+			left: 13px;
+			right: 13px;
+			overflow: auto;
+		}
+		#consoleText {
+			padding: 10px;
+			overflow: auto;
+		}
+	</style>
+</head>
+<body>
+<div id="header">
+<button onclick="startServer()" id="serverButton">Start</button><input type="text" id="link" readonly></input>
+</div>
+<div id="editor">
+</div>
+<div id="console">
+	<div id="consoleText">
+		Console opened: <br>
+	</div>
+</div>
+<script>
+	editor=ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
+</script>
+
+</body>
+</html>
